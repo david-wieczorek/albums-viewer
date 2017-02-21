@@ -20,7 +20,7 @@ export default class GamesContainer extends Component {
    toggleModal (index) {
       this.setState({ selectedGame: this.state.games[index] });
       // Since we included bootstrap we can show our modal through its syntax
-      $('#game-modal').modal();
+      //$('#game-modal').modal();
    }
 
    getGames () {
