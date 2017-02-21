@@ -10,7 +10,7 @@ export default class Layout extends PureComponent {
             </nav>
             {this.props.children}
             <footer className="text-center">
-               <p>© 2016 Samuele Zaza</p>
+               <h4>DWK</h4>
             </footer>
          </div>
       );
