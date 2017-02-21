@@ -1,3 +1,4 @@
+import './nav.scss';
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router';
 

@@ -39,3 +39,10 @@ exports.babel = {
   exclude: /node_modules/,
   loaders: ['babel-loader']
 };
+
+// Babel loader
+exports.sass = {
+  test: /\.scss$/,
+  exclude: /node_modules/,
+  loaders: ['style-loader', 'css-loader', 'sass-loader']
+};

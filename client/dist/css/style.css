@@ -1,8 +1,0 @@
-li a {
-   text-decoration: none;
-}
-li.active a {
-   color: red;
-   text-decoration: underline;
-   text-transform: uppercase;
-}
