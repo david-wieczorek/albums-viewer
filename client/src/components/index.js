@@ -10,13 +10,13 @@ import Welcome from './Welcome';
 
 // We export all the components at once
 export {
-  About,
-  Contact,
-  Form,
-  Game,
-  GamesListManager,
-  Home,
-  Archive,
-  Modal,
-  Welcome
+   About,
+   Contact,
+   Form,
+   Game,
+   GamesListManager,
+   Home,
+   Archive,
+   Modal,
+   Welcome
 };

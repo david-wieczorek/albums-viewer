@@ -5,6 +5,6 @@ import Routes from './routes';
 
 // Our views are rendered inside the #content div
 ReactDOM.render(
-  Routes,
-  document.getElementById('app')
+   Routes,
+   document.getElementById('app')
 );
