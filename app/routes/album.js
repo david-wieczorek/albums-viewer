@@ -1,55 +1,55 @@
 // We import our game schema
-import Game from '../models/game';
+import Album from '../models/album';
 
 // Get all the games sorted by postDate
-const getGames = (req, res) => {
+const getAlbums = (req, res) => {
     // Query the db, if no errors send all the games to the client
-    Game.find(null, null, { sort: { postDate : 1 } }, (err, games) => {
+    Album.find(null, null, { sort: { postDate : 1 } }, (err, albums) => {
         if (err) {
             res.send(err);
         }
-        res.json(games); // Games sent as json
+        res.json(albums); // Games sent as json
     });
 }
 
 // Get a single game filtered by ID
-const getGame = (req, res) => {
+const getAlbum = (req, res) => {
     const { id } = req.params;
     // Query the db for a single game, if no errors send it to the client
-    Game.findById(id, (err, game) => {
+    Album.findById(id, (err, album) => {
         if (err) {
             res.send(err);
         }
-        res.json(game); // Game sent as json
+        res.json(album); // Game sent as json
     });
 }
 
 // Get the body data and create a new Game
-const postGame = (req, res) => {
+const postAlbum = (req, res) => {
   // We assign the game info to a empty game and send a message back if no errors
-  let game = Object.assign(new Game(), req.body);
+  let album = Object.assign(new Album(), req.body);
   // ...Then we save it into the db
-  game.save(err => {
+  album.save(err => {
     if (err) {
       res.send(err);
     }
-    res.json({ message: 'game created' }); // A simple JSON answer to inform the client
+    res.json({ message: 'album created' }); // A simple JSON answer to inform the client
   });
 };
 
 // Delete a game by the given ID
-const deleteGame = (req, res) => {
+const deleteAlbum = (req, res) => {
 // We remove the game by the given id and send a message back if no errors
-  Game.remove(
+  Album.remove(
     { _id: req.params.id },
     err => {
       if (err) {
         res.send(err);
       }
-      res.json({ message: 'successfully deleted' }); // A simple JSON answer to inform the client
+      res.json({ message: 'Album successfully deleted' }); // A simple JSON answer to inform the client
     }
   );
 };
 
 // We export our functions to be used in the server routes
-export { getGames, getGame, postGame, deleteGame };
+export { getAlbums, getAlbum, postAlbum, deleteAlbum };

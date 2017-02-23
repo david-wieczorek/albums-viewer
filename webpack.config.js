@@ -17,8 +17,7 @@ const common = {
    module: {
       loaders: [
          loaders.babel, // Transpiler
-         //loaders.css, // Our bundle will contain the css
-         loaders.sass,
+         loaders.sass, // Load scss
          loaders.font, // Load fonts
       ]
    },

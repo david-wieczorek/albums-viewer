@@ -6,7 +6,7 @@ export default class Welcome extends PureComponent {
     return (
       <div className="inner">
          <h2>Welcome Page</h2>
-         <Link className="btn btn-lg" to="/games">Browse Albums!</Link>
+         <Link className="btn btn-lg" to="/albums">Browse Albums!</Link>
       </div>
     );
   }

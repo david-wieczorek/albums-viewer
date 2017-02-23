@@ -15,7 +15,7 @@ export default class AddGameContainer extends Component {
    submit () {
       // We create the newGame object to be posted to the server
       const newGame = Object.assign({}, { picture: $('#picture').attr('src') }, this.state.newGame);
-      fetch('http://localhost:8080/games', {
+      fetch('http://localhost:8080/albums', {
          headers: new Headers({
             'Content-Type': 'application/json'
          }),

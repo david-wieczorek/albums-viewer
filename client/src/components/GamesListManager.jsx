@@ -9,7 +9,7 @@ export default class GamesListManager extends PureComponent {
 
          <div className="container">
             <input type="search" placeholder="Search by Name" className="form-control search-bar" onKeyUp={setSearchBar} />
-            <Link to="/games/add" className="btn btn-danger">Add a new Game!</Link>
+            <Link to="/albums/add" className="btn btn-danger">Add a new Game!</Link>
 
             <div className="row">
                {

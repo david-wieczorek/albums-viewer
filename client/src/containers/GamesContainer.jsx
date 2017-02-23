@@ -17,7 +17,7 @@ export default class GamesContainer extends Component {
    }
 
    getGames () {
-      fetch('http://localhost:8080/games', {
+      fetch('http://localhost:8080/albums', {
          headers: new Headers({
             'Content-Type': 'application/json'
          })
@@ -27,7 +27,7 @@ export default class GamesContainer extends Component {
    }
 
    deleteGame (id) {
-      fetch(`http://localhost:8080/games/${id}`, {
+      fetch(`http://localhost:8080/albums/${id}`, {
          headers: new Headers({
             'Content-Type': 'application/json',
          }),

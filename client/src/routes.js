@@ -9,7 +9,7 @@ const routes = (
          <IndexRoute component={Welcome} />
          <Route path="/about" component={About} />
          <Route path="/contact" component={Contact} />
-         <Route path="/games" component={Archive}>
+         <Route path="/albums" component={Archive}>
             <IndexRoute component={GamesContainer} />
             <Route path="add" component={AddGameContainer} />
          </Route>

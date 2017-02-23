@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 // Our schema definition
-const gameSchema = new Schema(
+const albumSchema = new Schema(
    {
       name: String,
       year: Number,
@@ -17,4 +17,4 @@ const gameSchema = new Schema(
 );
 
 // We export the schema to use it anywhere else
-export default mongoose.model('Game', gameSchema);
+export default mongoose.model('Album', albumSchema);
