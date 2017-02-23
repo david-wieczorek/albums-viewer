@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
-import { AddGameContainer, GamesContainer } from './containers';
+import { AddGameContainer, GamesContainer, GameContainer } from './containers';
 import { Home, Archive, Welcome, About, Contact } from './components';
 
 const routes = (
@@ -11,6 +11,7 @@ const routes = (
          <Route path="/contact" component={Contact} />
          <Route path="/albums" component={Archive}>
             <IndexRoute component={GamesContainer} />
+            <Route path="/:id" component={GameContainer}/>
             <Route path="add" component={AddGameContainer} />
          </Route>
       </Route>

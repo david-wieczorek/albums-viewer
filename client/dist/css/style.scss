@@ -33,6 +33,10 @@ p {
    font-size: 15px;
 }
 
+a {
+   text-decoration: none;
+}
+
 /////////////////////////////////////////////////////////////
 // GRID SYSTEM
 /////////////////////////////////
@@ -85,6 +89,22 @@ p {
   flex: 0 0 25%
 }
 
+/////////////////////////////////////////////////////////////
+// ELEMENTS
+/////////////////////////////////
+.btn-group {
+   display: block;
+   margin: 10px;
+}
+.btn-group__center {
+   text-align: center;
+}
+.btn {
+   display: inline-block;
+   color: #fff;
+   padding: 15px;
+   background-color: red;
+}
 
 /////////////////////////////////////////////////////////////
 // STRUCTURE
