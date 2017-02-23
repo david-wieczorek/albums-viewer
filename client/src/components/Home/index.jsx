@@ -11,20 +11,24 @@ export default class Home extends PureComponent {
   }
   render () {
     return (
-      <div className="main">
+      <div className="wrapper">
          <header>
-            <h1>My albums archive</h1>
+            My albums Collection
          </header>
          <nav className="main-navigation">
             <ul className="nav">
                <li className={this.active('/')}><Link to="/">Home</Link></li>
-               <li className={this.active('/about')}><Link to="/about">About</Link></li>
+               <li className={this.active('/albums')}><Link to="/albums">Albums collection</Link></li>
                <li className={this.active('/contact')}><Link to="/contact">Contact</Link></li>
             </ul>
          </nav>
-         {this.props.children}
+         <div className="main">
+            <div className="content">
+               {this.props.children}
+            </div>
+         </div>
          <footer>
-            <h6>Made by DWK</h6>
+            Made by DWK
          </footer>
       </div>
     );

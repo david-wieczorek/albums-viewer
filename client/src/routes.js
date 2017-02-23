@@ -7,7 +7,7 @@ const routes = (
    <Router history={hashHistory}>
       <Route path="/" component={Home}>
          <IndexRoute component={Welcome} />
-         <Route path="/about" component={About} />
+         <Route path="/albums" component={GamesContainer} />
          <Route path="/contact" component={Contact} />
          <Route path="/albums" component={Archive}>
             <IndexRoute component={GamesContainer} />

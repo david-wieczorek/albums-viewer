@@ -8,10 +8,11 @@ export default class GamesListManager extends PureComponent {
       return (
 
          <div className="container">
-            <input type="search" placeholder="Search by Name" className="form-control search-bar" onKeyUp={setSearchBar} />
-            <Link to="/albums/add" className="btn btn-danger">Add a new Game!</Link>
-
-            <div className="row">
+            <div className="archive_options">
+               <input type="search" placeholder="Search by Name" className="search-bar" onKeyUp={setSearchBar} />
+               <Link to="/albums/add" className="btn btn-danger">Add a new Album!</Link>
+            </div>
+            <div className="archive_list grid">
                {
                   // A Game is only shown if its name contains the string from the searchBar
                   games

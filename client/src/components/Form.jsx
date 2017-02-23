@@ -7,14 +7,10 @@ export default class Form extends PureComponent {
          <div className="row scrollable">
             <div className="col-md-offset-2 col-md-8">
                <div className="text-left">
-                  <Link to="/games" className="btn btn-info">Back</Link>
+                  <Link to="/albums" className="btn btn-info">Back to collection</Link>
                </div>
                <div className="panel panel-default">
-                  <div className="panel-heading">
-                     <h2 className="panel-title text-center">
-                        Add a Game!
-                     </h2>
-                  </div>
+                  <h2>Add a new Album!</h2>
                   <div className="panel-body">
                      <form name="product-form" action="" onSubmit={() => this.props.submit()} noValidate>
                         <div className="form-group text-left">
