@@ -18,7 +18,7 @@ const common = {
       loaders: [
          loaders.babel, // Transpiler
          loaders.sass, // Load scss
-         loaders.font, // Load fonts
+         loaders.font // Load fonts
       ]
    },
    resolve: {
