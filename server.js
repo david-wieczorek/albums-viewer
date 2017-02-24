@@ -5,7 +5,7 @@ import morgan from 'morgan';
 
 // We gotta import our models and routes
 import Game from './app/models/album';
-import { getAlbums, getAlbum, postAlbum, deleteAlbum } from './app/routes/album';
+import { getAlbums, getAlbum, postAlbum, deleteAlbum, updateAlbum } from './app/routes/album';
 
 const app = express(); // Our express server!
 const port = process.env.PORT || 8080;
@@ -41,16 +41,22 @@ app.use((req, res, next) => {
 });
 
 // API routes
+
 app.route('/albums')
+// get albums collection
+.get(getAlbums)
 // create an album
-.post(postAlbum)
-// get all the albums collection
-.get(getAlbums);
-app.route('/albums/:id')
-// get a single album
+.post(postAlbum);
+
+
+app.route('/album/:id')
+// Get a single album
 .get(getAlbum)
-// delete a single album
+// Update a single album
+.put(updateAlbum)
+// Delete a single album
 .delete(deleteAlbum);
+
 
 // ...For all the other requests just sends back the Homepage
 app.route("*").get((req, res) => {

@@ -37,6 +37,20 @@ const postAlbum = (req, res) => {
   });
 };
 
+// Get the body data and update album
+const updateAlbum = (req, res) => {
+// We remove the game by the given id and send a message back if no errors
+  Album.update(
+    { _id: req.params.id }, req.body,
+    err => {
+      if (err) {
+        res.send(err);
+      }
+      res.json({ message: 'Album successfully updated' }); // A simple JSON answer to inform the client
+    }
+  );
+};
+
 // Delete a game by the given ID
 const deleteAlbum = (req, res) => {
 // We remove the game by the given id and send a message back if no errors
@@ -52,4 +66,4 @@ const deleteAlbum = (req, res) => {
 };
 
 // We export our functions to be used in the server routes
-export { getAlbums, getAlbum, postAlbum, deleteAlbum };
+export { getAlbums, getAlbum, postAlbum, deleteAlbum, updateAlbum };
