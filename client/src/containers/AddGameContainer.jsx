@@ -6,7 +6,7 @@ export default class AddGameContainer extends Component {
    constructor (props) {
       super(props);
       // Initial state
-      this.state = { newGame: {}};
+      this.state = { newAlbum: {}};
       // Bind this (context) to the functions to be passed down to the children components
       this.submit = this.submit.bind(this);
       this.uploadPicture = this.uploadPicture.bind(this);
@@ -14,7 +14,7 @@ export default class AddGameContainer extends Component {
    }
    submit () {
       // We create the newGame object to be posted to the server
-      const newGame = Object.assign({}, { picture: $('#picture').attr('src') }, this.state.newGame);
+      const newAlbum = Object.assign({}, { picture: $('#picture').attr('src') }, this.state.newGame);
       fetch('http://localhost:8080/albums', {
          headers: new Headers({
             'Content-Type': 'application/json'
@@ -48,13 +48,13 @@ export default class AddGameContainer extends Component {
    }
    // We make sure to keep the state up-to-date to the latest input values
    setGame () {
-      const newGame = {
+      const newAlbum = {
          name: document.getElementById('name').value,
          description: document.getElementById('description').value,
          year: document.getElementById('year').value,
          picture: $('#picture').attr('src')
       };
-      this.setState({ newGame });
+      this.setState({ newAlbum });
    }
    render () {
       return <Form submit={this.submit} uploadPicture={this.uploadPicture} setGame={this.setGame} />
