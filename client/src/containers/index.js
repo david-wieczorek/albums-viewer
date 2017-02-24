@@ -1,10 +1,10 @@
 import AddGameContainer from './AddGameContainer';
-import GamesContainer from './GamesContainer';
-import GameContainer from './GameContainer';
+import AlbumsContainer from './AlbumsContainer';
+import AlbumContainer from './AlbumContainer';
 
 // We export all the containers at once
 export {
    AddGameContainer,
-   GamesContainer,
-   GameContainer
+   AlbumsContainer,
+   AlbumContainer
 };

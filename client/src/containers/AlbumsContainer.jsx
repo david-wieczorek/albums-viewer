@@ -1,32 +1,33 @@
 import React, { Component } from 'react';
-import { GamesListManager } from '../components';
+import { AlbumsListManager } from '../components';
 
-export default class GamesContainer extends Component {
+export default class AlbumsContainer extends Component {
+
    constructor (props) {
       super(props);
       // The initial state
-      this.state = { games: [], selectedGame: {}, searchBar: '' };
+      this.state = { albums: [], selectedAlbum: {}, searchBar: '' };
       // Bind the functions to this (context)
-      this.deleteGame = this.deleteGame.bind(this);
+      this.deleteAlbum = this.deleteAlbum.bind(this);
       this.setSearchBar = this.setSearchBar.bind(this);
    }
 
    // Once the component mounted it fetches the data from the server
    componentDidMount () {
-      this.getGames();
+      this.getAlbums();
    }
 
-   getGames () {
+   getAlbums () {
       fetch('http://localhost:8080/albums', {
          headers: new Headers({
             'Content-Type': 'application/json'
          })
       })
       .then(response => response.json()) // The json response to object literal
-      .then(data => this.setState({ games: data }));
+      .then(data => this.setState({ albums: data }));
    }
 
-   deleteGame (id) {
+   deleteAlbum (id) {
       fetch(`http://localhost:8080/albums/${id}`, {
          headers: new Headers({
             'Content-Type': 'application/json',
@@ -35,8 +36,8 @@ export default class GamesContainer extends Component {
       })
       .then(response => response.json())
       .then(response => {
-         // The game is also removed from the state thanks to the filter function
-         this.setState({ games: this.state.games.filter(game => game._id !== id) });
+         // The album is also removed from the state thanks to the filter function
+         this.setState({ albums: this.state.albums.filter(album => album._id !== id) });
          console.log(response.message);
       });
    }
@@ -47,14 +48,14 @@ export default class GamesContainer extends Component {
    }
 
    render () {
-      const { games, selectedGame, searchBar } = this.state;
+      const { albums, selectedAlbum, searchBar } = this.state;
       return (
          <div>
-            <GamesListManager
-               games={games}
+            <AlbumsListManager
+               albums={albums}
                searchBar={searchBar}
                setSearchBar={this.setSearchBar}
-               deleteGame={this.deleteGame}
+               deleteAlbum={this.deleteAlbum}
             />
          </div>
       );

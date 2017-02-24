@@ -1,8 +1,8 @@
 import About from './About';
 import Contact from './Contact';
 import Form from './Form';
-import Game from './Game';
-import GamesListManager from './GamesListManager';
+import Album from './Album';
+import AlbumsListManager from './AlbumsListManager';
 import Home from './Home/';
 import Archive from './Archive';
 import Welcome from './Welcome';
@@ -12,8 +12,8 @@ export {
    About,
    Contact,
    Form,
-   Game,
-   GamesListManager,
+   Album,
+   AlbumsListManager,
    Home,
    Archive,
    Welcome
