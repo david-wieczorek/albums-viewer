@@ -28,7 +28,7 @@ export default class AlbumsContainer extends Component {
    }
 
    deleteAlbum (id) {
-      fetch(`http://localhost:8080/albums/${id}`, {
+      fetch(`http://localhost:8080/album/${id}`, {
          headers: new Headers({
             'Content-Type': 'application/json',
          }),

@@ -11,8 +11,8 @@ const routes = (
          <Route path="/contact" component={Contact} />
          <Route path="/albums" component={Archive}>
             <IndexRoute component={AlbumsContainer} />
-            <Route path=":id" component={AlbumContainer}/>
             <Route path="add" component={AddGameContainer} />
+            <Route path=":id" component={AlbumContainer}/>
          </Route>
       </Route>
    </Router>
