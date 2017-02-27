@@ -10,23 +10,23 @@ export default class AddGameContainer extends Component {
       // Bind this (context) to the functions to be passed down to the children components
       this.submit = this.submit.bind(this);
       this.uploadPicture = this.uploadPicture.bind(this);
-      this.setGame = this.setGame.bind(this);
+      this.setAlbum = this.setAlbum.bind(this);
    }
    submit () {
       // We create the newGame object to be posted to the server
-      const newAlbum = Object.assign({}, { picture: $('#picture').attr('src') }, this.state.newGame);
+      const newAlbum = Object.assign({}, { picture: $('#picture').attr('src') }, this.state.newAlbum);
       fetch('http://localhost:8080/albums', {
          headers: new Headers({
             'Content-Type': 'application/json'
          }),
          method: 'POST',
-         body: JSON.stringify(newGame)
+         body: JSON.stringify(newAlbum)
       })
       .then(response => response.json())
       .then(data => {
          console.log(data.message);
          // We go back to the games list view
-         hashHistory.push('/games');
+         hashHistory.push('/albums');
       });
    }
    uploadPicture () {
@@ -47,7 +47,7 @@ export default class AddGameContainer extends Component {
       );
    }
    // We make sure to keep the state up-to-date to the latest input values
-   setGame () {
+   setAlbum () {
       const newAlbum = {
          name: document.getElementById('name').value,
          description: document.getElementById('description').value,
@@ -57,6 +57,6 @@ export default class AddGameContainer extends Component {
       this.setState({ newAlbum });
    }
    render () {
-      return <Form submit={this.submit} uploadPicture={this.uploadPicture} setGame={this.setGame} />
+      return <Form submit={this.submit} uploadPicture={this.uploadPicture} setGame={this.setAlbum} />
    }
 }
